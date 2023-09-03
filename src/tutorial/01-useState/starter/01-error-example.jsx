@@ -1,5 +1,17 @@
-const ErrorExample = () => {
-  return <h2>useState error example</h2>;
-};
+import { useState } from 'react'
 
-export default ErrorExample;
+const ErrorExample = () => {
+  const [count, setCount] = useState(0)
+  const increaseCount = () => {
+    setCount(count + 1)
+  }
+
+  return (
+    <div>
+      <h5>{count}</h5>
+      <button onClick={increaseCount}>increase</button>
+    </div>
+  )
+}
+
+export default ErrorExample
