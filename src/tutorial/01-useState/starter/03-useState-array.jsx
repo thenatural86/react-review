@@ -20,11 +20,16 @@ const UseStateArray = () => {
         const { id, name } = person
         return (
           <div key={id}>
-            {name} | <button onClick={() => removePerson(id)}>Remove</button>
+            {name} |{' '}
+            <button type='button' onClick={() => removePerson(id)}>
+              Remove
+            </button>
           </div>
         )
       })}
-      <button onClick={() => clearList()}>Clear List</button>
+      <button type='button' className='btn' onClick={clearList}>
+        Clear List
+      </button>
     </div>
   )
 }
