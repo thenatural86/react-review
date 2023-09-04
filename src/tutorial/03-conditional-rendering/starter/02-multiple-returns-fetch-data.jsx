@@ -5,17 +5,18 @@ const MultipleReturnsFetchData = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url)
-        const user = await response.json()
-        setUser(user)
-      } catch (error) {
-        console.log(error)
-      }
-      setIsLoading(false)
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url)
+      const user = await response.json()
+      setUser(user)
+    } catch (error) {
+      console.log(error)
     }
+    setIsLoading(false)
+  }
+
+  useEffect(() => {
     fetchData()
   }, [])
 
