@@ -3,7 +3,9 @@ import { useState } from 'react'
 const ErrorExample = () => {
   const [count, setCount] = useState(0)
   const increaseCount = () => {
-    setCount(count + 1)
+    setCount((prevState) => {
+      return prevState + 1
+    })
   }
 
   return (
