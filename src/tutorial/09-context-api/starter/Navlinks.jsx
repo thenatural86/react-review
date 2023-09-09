@@ -1,10 +1,10 @@
 import React from 'react'
 import UserContainer from './UserContainer'
 
-const Navlinks = ({ name, logout }) => {
+const Navlinks = () => {
   return (
     <div>
-      <UserContainer name={name} logout={logout} />
+      <UserContainer />
     </div>
   )
 }
