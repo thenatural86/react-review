@@ -5,7 +5,11 @@ const defaultState = {
   people: data,
 }
 
-const reducer = () => {}
+const reducer = (state, action) => {
+  if (action.type === 'CLEAR LIST') {
+    return { ...state, people: [] }
+  }
+}
 
 const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState)
@@ -13,6 +17,10 @@ const ReducerBasics = () => {
   const removeItem = (id) => {
     // let newPeople = people.filter((person) => person.id !== id)
     // setPeople(newPeople)
+  }
+
+  const clearList = () => {
+    dispatch({ type: 'CLEAR LIST' })
   }
 
   return (
@@ -30,7 +38,7 @@ const ReducerBasics = () => {
         <button
           className='btn'
           style={{ marginTop: '2rem' }}
-          onClick={() => setPeople([])}
+          onClick={clearList}
         >
           clear items
         </button>
